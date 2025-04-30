@@ -16,6 +16,10 @@
 .header nav ul li{
     display: inline-block;
 }
+
+
+
+
 .section1{
     height: 200px;
     width: 100%;
@@ -67,13 +71,66 @@
     height: 100%;
     margin: auto 5px;
 }
-.footer{
-    background-color: black;
-    height: 50px;
-    width: 100%;
-}
-.foot{
-    font-size: larger;
+.footer {
+    background-color: #333;
     color: white;
-    text-align: center;
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+}
+
+.colonnes-pied-de-page {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.colonne-pied-de-page {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.colonne-pied-de-page h3 {
+    border-bottom: 2px solid grey;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.colonne-pied-de-page ul {
+    list-style: none;
+    padding: 0;
+}
+
+.colonne-pied-de-page li {
+    margin-bottom: 10px;
+}
+
+.colonne-pied-de-page a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    .colonne-pied-de-page{
+        flex: 100%;
+        text-align: center;
+    }
+    
+    .colonne-pied-de-page a {
+        justify-content: center;
+    }
 }
