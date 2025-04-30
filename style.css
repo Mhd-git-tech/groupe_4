@@ -1,21 +1,26 @@
 :root{
     --couleurbl: blue;
 }
-.header{
-    background-color: gray;
-    width: 98%;
-    height: 10%;
-    left: 1%;
-    right: 1%;
+.header nav ul {
     display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 30px;
+    margin: 0%;
+    background-color: gray;
+    margin-top: 30px;
 }
-.header nav{
-    float: right;
-    margin-left: 190px;
+
+.header nav ul li a {
+    text-decoration: none; 
+    color: white;
+    font-size: 16px; 
+    font-weight: bold;
 }
-.header nav ul li{
-    display: inline-block;
+.logo{
+    font-size: large;
 }
+
 .section1{
     height: 200px;
     width: 100%;
