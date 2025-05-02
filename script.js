@@ -4,7 +4,7 @@ let index = 0;
 
 function showNextSlide() {
     index = (index + 1) % slides.length;
-    carousel-container.style.transform = `translateX(-${index * 100}%)`;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
 }
 
 // Défile toutes les 3 secondes

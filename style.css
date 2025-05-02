@@ -1,23 +1,21 @@
 :root{
     --couleurbl: blue;
 }
-.header nav ul{
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-    padding: 30px;
-    margin: 0%;
+.header{
     background-color: gray;
-    margin-top: 30px;
+    width: 98%;
+    height: 10%;
+    left: 2%;
+    right: 1%;
+    display: flex;
+
 }
-.header nav ul li a {
-    text-decoration: none;
-    color: white;
-    fond-size: 16px;
-    font-weight: bold;
+.header nav{
+    float: right;
+    margin-left: 190px;
 }
-.logo{
-    font-size: large;
+.header nav ul li{
+    display: inline-block;
 }
 .section1 {
     display: flex;
@@ -31,6 +29,8 @@
     box-sizing: border-box;
     
 }
+
+
 .carousel-container {
     width: 100%;
     max-width: 600px;
@@ -100,138 +100,47 @@
     height: 300px;
     text-align: center;
 }
-.produit-tendances{
-    grid-template-columns:repeat(auto-fit, minmax(450px, 1fr));
-    display: grid;
-    gap: 20px;
-    padding:30px ;
+
+.section2{
+    height: 150px;
+    background-color: var(--couleurbl);
+    margin: auto 5px;
 }
-.tendance1{
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.tendances{
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    display: grid;
-    gap: 20px;
-    padding: 30px;
-}
-.tendance{
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.tendance h2{
-    margin-top: 10px;
-}
-.tendance img{
-    width:100%;
-    height: auto;
-    border-radius: 5px;
+.div2_3{
+    width: 100%;
+    height: 100%;
+    background-color: var(--couleurbl);
+    margin: auto 5px;
 }
 
 .produit{
     text-align: center;
+}
+.partie1, .partie2, .partie3{
+    display: flex;
+    margin: 5px 10px;
+    width: 100%;
+    height: 200px;
 }
 .produits{
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    display: grid;
-    gap: 20px;
-    padding: 30px;
+    background-color: var(--couleurbl);
+    margin: auto 5px;
+    width: 20%;
+    height: 100%;
 }
-.produit{
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.pro{
+    background-color: var(--couleurbl);
+    width: 33%;
+    height: 100%;
+    margin: auto 5px;
+}
+.footer{
+    background-color: black;
+    height: 50px;
+    width: 100%;
+}
+.foot{
+    font-size: larger;
+    color: white;
     text-align: center;
 }
-.produit h1{
-    margin-top: 10px;
-}
-.produit img{
-    width:100%;
-    height: auto;
-    border-radius: 5px;
-}
-.produit a {
-    margin-top: 8px;
-    background-color: #0077cc;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  .section3{
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    display: grid;
-    gap: 20px;
-    padding: 30px;
-}
-.last{
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.last h1{
-    margin-top: 10px;
-}
-.last img{
-    width:100%;
-    height: auto;
-    border-radius: 5px;
-}
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 30px 0;
-    font-family: Arial, sans-serif;
-}
-.colonnes-pied-de-page{
-    display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-.colonne-pied-de-page{
-   flex: 1;
-   min-width: 200px;
-   padding: 0 15px;
-   margin-bottom: 20px;
-}
-.colonne-pied-de-page h3{
-    border-bottom: 2px solid grey;
-    padding-bottom: 10px;
-    margin-top: 15px
-}
-.colonne-pied-de-page ul{
-    list-style: none;
-    padding: 0;
-}
-.colonne-pied-de-page ul li{
-    margin-bottom: 10px;
-}
-.colonne-pied-de-page a{
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.social-icon{
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    vertical-align: middle;
-}
-@media (max-width: 768px) {
-    .colonne-pied-de-page{
-        flex:100%;
-        text-align: center;
-    }
-    .colonne-pied-de-page a{
-        justify-content: center;
-    }
-}
-
-
