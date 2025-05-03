@@ -1,11 +1,24 @@
-const carousel = document.querySelector('.carousel');
-const slides = document.querySelectorAll('.slide');
-let index = 0;
+let cartCount = 0;
 
-function showNextSlide() {
-    index = (index + 1) % slides.length;
-    carousel-container.style.transform = `translateX(-${index * 100}%)`;
+// Fonction pour ajouter au panier
+function addToCart(productName, productPrice) {
+    cartCount++;
+    updateCartDisplay();
+    //alert(productName + " a été ajouté au panier !");
+    qte = document.getElementById('qte');
+    quantit= parseInt(qte.textContent,10);
+    quantit++;
+    qte.textContent = quantit;
+
+    
+    // Ici vous pourriez aussi stocker les articles dans un tableau
+    // console.log("Article ajouté :", productName, productPrice);
 }
 
-// Défile toutes les 3 secondes
-setInterval(showNextSlide, 3000);
+// Fonction pour mettre à jour l'affichage du compteur
+function updateCartDisplay() {
+    const cartElement = document.querySelector('.Logo a');
+    if (cartElement) {
+        cartElement.textContent = "Card:" + cartCount;
+    }
+}
