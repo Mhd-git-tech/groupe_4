@@ -1,24 +1,84 @@
-let cartCount = 0;
+class ShoppingCart {
+    constructor() {
+        this.items = [];
+        this.init();
+    }
 
-// Fonction pour ajouter au panier
-function addToCart(productName, productPrice) {
-    cartCount++;
-    updateCartDisplay();
-    //alert(productName + " a été ajouté au panier !");
-    qte = document.getElementById('qte');
-    quantit= parseInt(qte.textContent,10);
-    quantit++;
-    qte.textContent = quantit;
+    init() {
+        document.addEventListener('DOMContentLoaded', () => {
+            this.setupCartHover();
+        });
+    }
 
-    
-    // Ici vous pourriez aussi stocker les articles dans un tableau
-    // console.log("Article ajouté :", productName, productPrice);
+    addItem(productName, productPrice) {
+        const existingItem = this.items.find(item => item.name === productName);
+        
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            this.items.push({
+                name: productName,
+                price: productPrice,
+                quantity: 1
+            });
+        }
+        
+        this.updateCartDisplay();
+    }
+
+    updateCartDisplay() {
+        const qteElement = document.getElementById('qte');
+        const totalItems = this.items.reduce((total, item) => total + item.quantity, 0);
+        
+        if (totalItems > 0) {
+            qteElement.textContent = totalItems;
+        } else {
+            qteElement.textContent = '';
+        }
+    }
+
+    renderCartItems() {
+        const tooltip = document.querySelector('.cart-tooltip');
+        
+        if (this.items.length === 0) {
+            tooltip.innerHTML = '<p>Votre panier est vide</p>';
+            return;
+        }
+
+        let html = '<h4>Votre Panier</h4>';
+
+        this.items.forEach(item => {
+            html += `
+                <div class="cart-item">
+                    <span class="cart-item-name">${item.name}</span>
+                    <span class="cart-item-price">${item.price.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$& ')} FCFA</span>
+                    <span class="cart-item-qty">x${item.quantity}</span>
+                </div>
+            `;
+        });
+
+        tooltip.innerHTML = html;
+    }
+
+    setupCartHover() {
+        const cartElement = document.querySelector('.Logo');
+        const tooltip = document.querySelector('.cart-tooltip');
+        
+        cartElement.addEventListener('mouseenter', () => {
+            this.renderCartItems();
+            tooltip.classList.add('show');
+        });
+        
+        cartElement.addEventListener('mouseleave', () => {
+            tooltip.classList.remove('show');
+        });
+    }
 }
 
-// Fonction pour mettre à jour l'affichage du compteur
-function updateCartDisplay() {
-    const cartElement = document.querySelector('.Logo a');
-    if (cartElement) {
-        cartElement.textContent = "Card:" + cartCount;
-    }
+// Initialisation du panier
+const cart = new ShoppingCart();
+
+// Fonction globale pour ajouter au panier
+function addToCart(productName, productPrice) {
+    cart.addItem(productName, productPrice);
 }
